@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+a {
+  text-decoration: none;
+}
+button {
+  cursor: pointer;
+  border: none;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+input {
+  border: none;
+  outline: none;
+}
+body {
+  margin: 0;
+  transition: 0.3s;
+  overflow: hidden;
+  background-color: #1e1e1e;
+}
+.app {
+  width: 100%;
+  max-width: 1400px;
+  height: 100vh;
+  margin: 0 auto;
+  background: #f7f7f7;
+  border-radius: 0;
+  padding: 40px;
+  position: relative;
+  transition: 0.3s;
+  overflow-y: auto;
+}
+.app.dark {
+  background: #1e1e1e;
+  color: white;
+}
+
+.title {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.search-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.search-row input {
+  width: 595px;
+  padding: 10px 14px;
+  border: 1px solid #7c6cff;
+  border-radius: 6px;
+}
+.btn {
+  background: #7c6cff;
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 6px;
+}
+.icon-btn {
+  background: #7c6cff;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+}
+.todo {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.todo-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo hr {
+  margin-top: 8px;
+  border: 0.5px solid #7c6cff;
+}
+.fab {
+  position: absolute;
+  right: 180px;
+  bottom: 30px;
+  width: 50px;
+  height: 50px;
+  background: #7c6cff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 22px;
+}
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  width: 350px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.modal.dark {
+  background: #2a2a2a;
+}
+.modal input {
+  width: 100%;
+  padding: 8px;
+  margin: 15px 0;
+  border: 1px solid #6c63ff;
+  border-radius: 5px;
+}
+.modal-actions {
+  margin-top: 128px;
+  display: flex;
+  justify-content: space-between;
+}
+.cancel-btn {
+  border: 1px solid #6c63ff;
+  color: #6c63ff;
+  padding: 10px 22px;
+  border-radius: 5px;
+  background-color: white;
+}
+.dark-body {
+  background: #111;
+}
+body:not(.dark-body) {
+  background: #f2f2f2;
+}
+.app.dark .search-row input {
+  background: #2a2a2a;
+  border: 1px solid #7c6cff;
+  color: white;
+}
+.app.dark .search-row input::placeholder {
+  color: #bbb;
+}
+.edit-btn,
+.delete-btn {
+  width: 18px;
+  height: 18px;
+  background-color: transparent;
+}
+.app.dark .btn,
+.app.dark .icon-btn {
+  background: #6c63ff;
+  color: white;
+}
+.app.dark .cancel-btn {
+  background: transparent;
+  border: 1px solid #7c6cff;
+  color: #7c6cff;
+}
+.app.dark .modal {
+  background: #2a2a2a;
+  color: white;
+}
+.app.dark .modal input {
+  background: #1e1e1e;
+  border: 1px solid #7c6cff;
+  color: white;
+}
+.app.dark .todo hr {
+  border-color: #7c6cff;
+}
+.app:not(.dark) .btn,
+.app:not(.dark) .icon-btn {
+  background: #7c6cff;
+  color: white;
+}
+.app:not(.dark) .search-row input {
+  background: white;
+  color: black;
+}
+.app:not(.dark) .modal input {
+  background: white;
+  color: black;
+}
+.app:not(.dark) .edit-btn {
+  color: #333;
+}
+.app.dark .edit-btn {
+  color: white;
+}
+.app:not(.dark) .delete-btn {
+  color: #ff4d4f;
+}
+.app.dark .delete-btn {
+  color: #ff6b6b;
+}
+@media (max-width: 600px) {
+  .app {
+    padding: 20px 15px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .search-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
+
+  .todo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .todo-left {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .modal-actions {
+    margin-top: 40px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cancel-btn,
+  .btn {
+    width: 100%;
+  }
+
+  .fab {
+    right: 15px;
+    bottom: 15px;
+  }
+}
+@media (max-width: 992px) {
+  .app {
+    padding: 30px 20px;
+  }
+}
