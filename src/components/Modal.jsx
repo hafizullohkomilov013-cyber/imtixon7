@@ -40,3 +40,4 @@ export default function Modal({ close, add, dark, editTodo, updateTodo }) {
     </div>
   );
 }
+
